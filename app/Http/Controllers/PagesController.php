@@ -11,4 +11,9 @@ class PagesController extends Controller
     {
         return Inertia::render('Home');
     }
+
+    public function about()
+    {
+        return Inertia::render('About');
+    }
 }
