@@ -1,12 +1,15 @@
 <template>
-    <div>
+    <Layout title="Inertia - About">
         <h1 v-text="name"></h1>
-        <inertia-link href="/home">Home</inertia-link>
-    </div>
+    </Layout>
 </template>
 
 <script>
+import Layout from '../Shared/Layout.vue'
 export default {
+    components: {
+        Layout
+    },
     props: ['name']
 }
 </script>
