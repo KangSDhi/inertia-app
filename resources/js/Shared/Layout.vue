@@ -3,6 +3,7 @@
         <header>
             <inertia-link href="/home">Home</inertia-link>
             <inertia-link href="/about">About</inertia-link>
+            <inertia-link href="/users">User</inertia-link>
         </header>
         <article>
             <slot/>
