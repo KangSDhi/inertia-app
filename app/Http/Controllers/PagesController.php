@@ -9,11 +9,17 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Home');
+        $title = 'Home';
+        return Inertia::render('Home',[
+            'title' => $title
+        ]);
     }
 
     public function about()
     {
-        return Inertia::render('About');
+        $title = 'Tentang Kami';
+        return Inertia::render('About', [
+            'name' => $title
+        ]);
     }
 }
