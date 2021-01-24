@@ -2,7 +2,10 @@
     <div>
         <h1>Daftar {{ title }}</h1>
         <ul>
-            <li v-for="user in users">{{ user.name }}</li>
+            <li v-for="user in users">
+                <p>{{ user.name }}</p>
+                <inertia-link :href="`/users/${user.id}`">Lihat User</inertia-link>
+            </li>
         </ul>
     </div>
 </template>
