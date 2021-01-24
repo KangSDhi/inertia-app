@@ -2,14 +2,16 @@
     <div>
         <h1>Daftar {{ title }}</h1>
         <ul>
-            <li>Kang</li>
-            <li>Sigit</li>
+            <li v-for="user in users">{{ user.name }}</li>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['title']
+    props: {
+        title: String,
+        users: Array
+    }
 }
 </script>
