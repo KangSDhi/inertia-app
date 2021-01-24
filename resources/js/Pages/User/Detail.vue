@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <Layout title="Detail User">
         <h1>{{ title }}</h1>
         <ul>
             <li>
@@ -9,11 +9,15 @@
                 <inertia-link href="/users">Kembali</inertia-link>
             </li>
         </ul>
-    </div>
+    </Layout>
 </template>
 
 <script>
+import Layout from '../../Shared/Layout.vue'
 export default {
+    components: {
+        Layout
+    },
     props: {
         title: String,
         user: Object

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <layout title="Daftar User">
         <h1>Daftar {{ title }}</h1>
         <ul>
             <li v-for="user in users">
@@ -7,11 +7,15 @@
                 <inertia-link :href="`/users/${user.id}`">Lihat User</inertia-link>
             </li>
         </ul>
-    </div>
+    </layout>
 </template>
 
 <script>
+import Layout from '../../Shared/Layout.vue'
 export default {
+    components: {
+        Layout
+    },
     props: {
         title: String,
         users: Array
