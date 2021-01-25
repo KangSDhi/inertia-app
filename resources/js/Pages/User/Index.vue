@@ -1,6 +1,7 @@
 <template>
     <layout title="Daftar User">
         <h1>Daftar {{ title }}</h1>
+        <inertia-link href="/users/create">Register</inertia-link>
         <ul>
             <li v-for="user in users">
                 <p>{{ user.name }}</p>

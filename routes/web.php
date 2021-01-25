@@ -21,4 +21,6 @@ Route::get('/', function () {
 Route::get('/home', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/users', [UserController::class, 'index']);
+
+Route::get('/users/create', [UserController::class, 'create']);
 Route::get('/users/{user}', [UserController::class, 'show']);

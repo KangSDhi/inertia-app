@@ -25,4 +25,17 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+
+    public function create()
+    {
+        $title = "Register";
+        return Inertia::render('User/Register', [
+            'title' => $title
+        ]);
+    }
+
+    public function store()
+    {
+        # code...
+    }
 }
