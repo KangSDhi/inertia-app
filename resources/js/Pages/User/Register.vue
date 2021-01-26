@@ -39,8 +39,8 @@ export default {
     },
     methods: {
         register(){
-            console.log(this.user);
-            // this.$inertia.post('/users', data)
+            // console.log(this.user);
+            this.$inertia.post('/users', this.user);
         }
     }
 }

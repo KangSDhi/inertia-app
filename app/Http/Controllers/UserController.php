@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function index(){
         $title = 'User';
-        $users = User::all();
+        $users = User::orderBy('id', 'DESC')->get();
         return Inertia::render('User/Index', [
             'title' => $title,
             'users' => $users
@@ -34,8 +36,14 @@ class UserController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        # code...
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return Redirect::route('user.index');
     }
 }

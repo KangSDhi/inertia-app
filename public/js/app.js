@@ -3066,7 +3066,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     register: function register() {
-      console.log(this.user); // this.$inertia.post('/users', data)
+      // console.log(this.user);
+      this.$inertia.post('/users', this.user);
     }
   }
 });
