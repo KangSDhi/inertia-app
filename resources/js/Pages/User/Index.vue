@@ -2,6 +2,9 @@
     <layout title="Daftar User">
         <h1>Daftar {{ title }}</h1>
         <inertia-link href="/users/create">Register</inertia-link>
+        <div v-if="$page.props.flash.message" class="alert">
+            {{ $page.props.flash.message }}
+        </div>
         <ul>
             <li v-for="user in users">
                 <p>{{ user.name }}</p>

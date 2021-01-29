@@ -52,8 +52,13 @@ class UserController extends Controller
         // ]);
 
         #caraketiga
-        User::create($request->all());
+        // User::create($request->all());
 
-        return Redirect::route('user.index');
+        #carakeempat
+        $post = $request->all();
+        $post['password'] = Hash::make($request->password);
+        User::create($post);
+
+        return Redirect::route('user.index')->with('message', 'User Created');
     }
 }

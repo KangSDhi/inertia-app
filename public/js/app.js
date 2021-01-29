@@ -3001,6 +3001,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -39087,6 +39090,14 @@ var render = function() {
       _c("inertia-link", { attrs: { href: "/users/create" } }, [
         _vm._v("Register")
       ]),
+      _vm._v(" "),
+      _vm.$page.props.flash.message
+        ? _c("div", { staticClass: "alert" }, [
+            _vm._v(
+              "\n        " + _vm._s(_vm.$page.props.flash.message) + "\n    "
+            )
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "ul",
