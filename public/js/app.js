@@ -3050,6 +3050,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -3065,7 +3068,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    title: String
+    title: String,
+    errors: Object
   },
   methods: {
     register: function register() {
@@ -39180,7 +39184,11 @@ var render = function() {
                 _vm.$set(_vm.user, "name", $event.target.value)
               }
             }
-          })
+          }),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("p", [_vm._v(_vm._s(_vm.errors.name))])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
@@ -39206,7 +39214,11 @@ var render = function() {
                 _vm.$set(_vm.user, "email", $event.target.value)
               }
             }
-          })
+          }),
+          _vm._v(" "),
+          _vm.errors.email
+            ? _c("p", [_vm._v(_vm._s(_vm.errors.email))])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
@@ -39232,7 +39244,11 @@ var render = function() {
                 _vm.$set(_vm.user, "password", $event.target.value)
               }
             }
-          })
+          }),
+          _vm._v(" "),
+          _vm.errors.password
+            ? _c("p", [_vm._v(_vm._s(_vm.errors.password))])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c(

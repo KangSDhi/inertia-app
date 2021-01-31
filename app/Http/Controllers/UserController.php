@@ -54,6 +54,12 @@ class UserController extends Controller
         #caraketiga
         // User::create($request->all());
 
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users|email',
+            'password' => 'required|min:8'
+        ]);
+
         #carakeempat
         $post = $request->all();
         $post['password'] = Hash::make($request->password);
