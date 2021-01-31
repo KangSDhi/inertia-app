@@ -67,4 +67,12 @@ class UserController extends Controller
 
         return Redirect::route('user.index')->with('message', 'User Created');
     }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        
+        return Redirect::route('user.index')->with('message', 'User Deleted');
+    }
 }

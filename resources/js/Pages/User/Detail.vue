@@ -7,6 +7,7 @@
                 <p>Email : <strong>{{ user.email }}</strong></p>
                 <p>{{ user.created_at }}</p>
                 <inertia-link href="/users">Kembali</inertia-link>
+                <a href="" @click.prevent="deleteuser">Delete</a>
             </li>
         </ul>
     </Layout>
@@ -21,6 +22,15 @@ export default {
     props: {
         title: String,
         user: Object
+    },
+    methods: {
+        deleteuser(){
+            if (confirm('data user ingin dihapus?')) {
+                this.$inertia.delete('/users/' + this.user.id);
+            } else {
+                return false;
+            }
+        }
     }
 }
 </script>

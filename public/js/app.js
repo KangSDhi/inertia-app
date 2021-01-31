@@ -2963,6 +2963,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2971,6 +2972,15 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     title: String,
     user: Object
+  },
+  methods: {
+    deleteuser: function deleteuser() {
+      if (confirm('data user ingin dihapus?')) {
+        this.$inertia["delete"]('/users/' + this.user.id);
+      } else {
+        return false;
+      }
+    }
   }
 });
 
@@ -39055,7 +39065,23 @@ var render = function() {
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(_vm.user.created_at))]),
           _vm._v(" "),
-          _c("inertia-link", { attrs: { href: "/users" } }, [_vm._v("Kembali")])
+          _c("inertia-link", { attrs: { href: "/users" } }, [
+            _vm._v("Kembali")
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { href: "" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.deleteuser($event)
+                }
+              }
+            },
+            [_vm._v("Delete")]
+          )
         ],
         1
       )
