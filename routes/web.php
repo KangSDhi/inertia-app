@@ -28,3 +28,5 @@ Route::get('/users/create', [UserController::class, 'create']);
 Route::get('/users/{user}', [UserController::class, 'show']);
 
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::get('/users/{id}/edit', [UserController::class, 'edit']);

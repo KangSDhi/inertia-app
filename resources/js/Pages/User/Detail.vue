@@ -8,6 +8,7 @@
                 <p>{{ user.created_at }}</p>
                 <inertia-link href="/users">Kembali</inertia-link>
                 <a href="" @click.prevent="deleteuser">Delete</a>
+                <inertia-link :href="`/users/${user.id}/edit`">Edit</inertia-link>
             </li>
         </ul>
     </Layout>

@@ -68,6 +68,32 @@ class UserController extends Controller
         return Redirect::route('user.index')->with('message', 'User Created');
     }
 
+    public function edit($id)
+    {
+        $user = User::find($id);
+        $title = "Edit Profile";
+        return Inertia::render('User/Edit', [
+            'title' => $title,
+            'user' => $user
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        // $user = User::find($id);
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->save();
+
+        User::where('id', $id)
+                ->update([
+                    'name' => $request->name,
+                    'email' => $request->email
+                ]);
+
+        return Redirect::route('user.index')->with('message', 'User Updated');
+    }
+
     public function destroy($id)
     {
         $user = User::find($id);
